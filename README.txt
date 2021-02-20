@@ -3,10 +3,7 @@
 
 	v0      18/05/2019
 	v0.1    19/05/2019 : Changement de la balise <div> vers la balise <img>.
-
-	Auteurs :
-		Code JavaScript :	http://meteo56.free.fr/horloge.php
-		Infographie :		http://www.b-sept.com/
+	
 --------------------------------------------------------------------------------
 
 Préparation des données :
