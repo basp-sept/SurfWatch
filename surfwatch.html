@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Surf Watch Project</title>
+<style type="text/css">
+body {
+	background-color: #333;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	color: #e0e0e0;
+}
+
+/*--------------------font-face------------------*/
+@font-face { font-family: 'DS-DIGIT'; src :url('DS-DIGIT.ttf?'); }
+
+h1 { margin:0px; font-size:24px; padding-bottom:11px; }
+p { margin:0px; font-size:18px; }
+
+a.main:link { color:#367ad9; text-decoration:none; }
+a.main:hover, a:active, a:focus { color:#367ad9; text-decoration:underline; }
+a.main:visited { color:#367ad9; text-decoration:none; }
+
+a.copyright:link { color:#e0e0e0; text-decoration:none; }
+a.copyright:hover, a:active, a:focus { color:#e0e0e0; text-decoration:underline; }
+a.copyright:visited { color:#e0e0e0; text-decoration:none; }
+
+#container { position:relative;
+			 width:657px;
+			 margin:0 auto;
+			 margin-top:31px; }
+
+.header { width:657px; height:39px; background-image:url(header_img_bg.png); }
+.main { width:657px; height:auto; background-image:url(main_bg.png); }
+
+.main_section_txt { width:611px; height:auto; padding:23px; }
+.main_sep { width:657px; height:10px; background-image:url(main_sep.png); }
+.ex_tidegraph { width:657px; height:198px; }
+
+.footer { width:657px; height:39px; background-image:url(footer_img_bg.png); }
+.footer_c p { position:relative; margin:0 auto; width:657px; height:auto; line-height:39px; text-align:center;
+		font-size:13px; text-shadow: 0px -1px #181818 }
+		
+
+/*--Demo TideWatch----------------------------------------------------*/
+#bloc_watch { width:221px; height:155px; margin-left:218px; margin-bottom:21px; background-image:url(demowatch_imgwatch.png); }
+#square28px { width:28px; height:28px; }
+#hour { width:110px; height:33px; margin-left:28px; font-size:34px; font-family:'DS-DIGIT'; color:#e0e0e0; }
+#graph { width:165px; height:66px; margin-left:28px; }
+/*--Demo TideWatch End-------------------------------------------------*/
+
+</style>
+</head>
+<div id="container">
+<div class="header"></div><!--Header End-->
+<div class="main">
+	<div class="main_section_txt"><h1>🌊Demo :</h1>
+    </div><!--Main Section Txt End-->
+    <div id="bloc_watch">
+    <div id="square28px"></div><div id="hour">
+    <script type="text/javascript">
+setInterval(function(){
+    document.getElementById('hour').innerHTML = new Date().toLocaleTimeString();
+}, 1000);</script>
+    </div><!--Hour---End--><div id="graph"><img id="tide_graph"></div><!--Graph'-End-->
+    </div><!--Bloc Watch End-->
+    <div class="main_sep"></div><!--Main Sep End-->
+    <div class="main_section_txt"><h1>📍Data settings :</h1>
+    <p>1. Find the date and time of the closest new moon to earth during the year on <a href="http://www.fourmilab.ch/earthview/pacalc.html" target="_blank" class="main">http://www.fourmilab.ch/earthview/pacalc.html</a> or <a href="http://www.astrosurf.com/grandourse/phaselun.pdf" target="_blank" class="main">http://www.astrosurf.com/grandourse/phaselun.pdf</a></p>
+    <p>=> 30/08/2019 10:38 TU</p><br />
+    <p>2. For a given spot, take the date and time of the next high tide on <a href="https://marine.meteoconsult.fr/meteo-marine/horaires-maree-lacanau-1051-4.php" target="_blank" class="main">https://marine.meteoconsult.fr/meteo-marine/horaires-maree-lacanau-1051-4.php</a></p>
+    <p>=> 30/08/2019 15:55 TU for "Lacanau Océan".</p>
+    </div><!--Main Section Txt End-->
+    <div class="main_sep"></div><!--Main Sep End-->
+    <div class="main_section_txt"><h1>Tide graph images pattern :</h1>
+    </div><!--Main Section Txt End-->
+    <div class="ex_tidegraph"><img src="ex_tideGraph.png" width="657" height="198" /></div><!--Ex TideGraph End-->
+</div><!--Main End-->
+<div class="footer">
+<div class="footer_c"><p><a href="http://basp.sept.free.fr" target="_blank" class="copyright">BASP</a> & <a href="http://meteo56.free.fr" target="_blank" class="copyright">Météo 56</a>© 2021</p></div><!--Footer_c End-->
+</div><!--Footer End-->
+</div><!--Container End-->
+
+<body>
+<script src="tideGraph/tideGraph.js"></script>
+<script>tideGraph("30/08/2019 17:55");</script>
+</body>
+</html>
